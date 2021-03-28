@@ -1,0 +1,3 @@
+include ':gender'
+include ':app'
+rootProject.name = "Viola Gender Classification"
