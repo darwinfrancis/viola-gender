@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3C6C3E"
+    android:background="#FF9800"
     tools:context=".MainActivity">
 
     <View
@@ -62,7 +62,7 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/tvAge"
+        android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -76,10 +76,11 @@
         app:layout_constraintTop_toBottomOf="@+id/ivFaceImage" />
 
     <Button
-        android:id="@+id/btFindAge"
+        android:id="@+id/btFindGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find Age"
+        android:text="Find Gender"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/ivInputImage"
         app:layout_constraintTop_toBottomOf="@+id/ivInputImage" />
 
