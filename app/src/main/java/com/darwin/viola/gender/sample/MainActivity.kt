@@ -64,12 +64,12 @@ class MainActivity : AppCompatActivity() {
         btChooseImage.setOnClickListener {
             requestStoragePermission()
         }
-        btFindAge.setOnClickListener {
+        btFindGender.setOnClickListener {
             val faceBitmap = cropFaceFromBitmap(bitmap!!)
             faceBitmap?.let {
                 tvError.visibility = View.GONE
                 ivFaceImage.setImageBitmap(faceBitmap)
-                findAge(faceBitmap)
+                findGender(faceBitmap)
             } ?: run {
                 "Unable to crop face from given image.".also { tvError.text = it }
                 tvError.visibility = View.VISIBLE
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         permissionHelper.requestPermission(requiredPermissions, 100)
     }
 
-    private fun findAge(faceBitmap: Bitmap) {
+    private fun findGender(faceBitmap: Bitmap) {
         val ageOption = GenderOptions.Builder()
                 .enableFacePreValidation() //ignore this if you are confident that input image has valid face in it.
                 .build()
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
 
             val faceMidpoint = PointF()
 
-            face.getMidPoint(faceMidpoint);
+            face.getMidPoint(faceMidpoint)
 
             val eyesDistance = face.eyesDistance()
             val xPadding = (eyesDistance * 2)
@@ -206,7 +206,7 @@ class MainActivity : AppCompatActivity() {
             bitmap = Util.modifyOrientation(bitmap!!, imagePath!!)
             ivInputImage.setImageBitmap(bitmap)
             ivFaceImage.setImageBitmap(null)
-            tvAge.text = ""
+            tvGender.text = ""
         }
     }
 
@@ -214,7 +214,7 @@ class MainActivity : AppCompatActivity() {
         override fun onGenderClassificationResult(result: List<GenderRecognition>) {
             val builder = StringBuilder()
             result.forEach {
-                builder.append("Range: ")
+                builder.append("Gender: ")
                 builder.append(it.range)
                 builder.append(", Confidence: ")
                 builder.append(it.confidence.toBigDecimal().toPlainString())
@@ -222,7 +222,7 @@ class MainActivity : AppCompatActivity() {
                 builder.append("\n")
             }
 
-            tvAge.text = builder.toString()
+            tvGender.text = builder.toString()
         }
 
         override fun onGenderClassificationError(error: String) {
