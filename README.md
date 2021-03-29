@@ -12,19 +12,19 @@ Using Viola gender classification library, you can find gender of a given face b
 ## Getting Started
 **Demo application**
 
-Download sample application [sample_v_1.0.0](app-viola-age-v1.0.2-demo.apk)
+Download sample application [sample_v_1.0.1](viola-gender-sample-v1.0.1.apk)
 
 **Compatibility**
- * *Minimum Android SDK* : Viola Gender 1.0.0 requires a minimum API level of 21.
+ * *Minimum Android SDK* : Viola Gender 1.0.1 requires a minimum API level of 21.
 
 **Installation**
 
-Download the latest aar from [JCenter](https://bintray.com/darwinfrancis/Viola/download_file?file_path=com%2Fdarwin%2Fviola%2Fgender%2F1.0.0%2Fgender-1.0.0.aar) or grab via
+Download the latest aar from [JCenter](https://bintray.com/darwinfrancis/Viola/download_file?file_path=com%2Fdarwin%2Fviola%2Fgender%2F1.0.1%2Fgender-1.0.1.aar) or grab via
 
 Gradle:
 ```gradle
 dependencies {
-  implementation 'com.darwin.viola:gender:1.0.0'
+  implementation 'com.darwin.viola:gender:1.0.1'
 }
 ```
 
@@ -34,7 +34,7 @@ or Maven:
 <dependency>
   <groupId>com.darwin.viola</groupId>
   <artifactId>gender</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
